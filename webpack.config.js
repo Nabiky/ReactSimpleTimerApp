@@ -25,7 +25,10 @@ var webpack = require('webpack');
     alias:{
       Main:'app/components/Main.jsx',
       applicationStyles: 'app/styles/app.scss',
-      Navegation: 'app/components/Navegation.jsx'
+      Navegation: 'app/components/Navegation.jsx',
+      Timer: 'app/components/Timer.jsx',
+      Countdown: 'app/components/countdown.jsx',
+
     },
     extensions: ['', '.js', '.jsx']
   },
