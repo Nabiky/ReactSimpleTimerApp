@@ -28,6 +28,7 @@ var webpack = require('webpack');
       Navegation: 'app/components/Navegation.jsx',
       Timer: 'app/components/Timer.jsx',
       Countdown: 'app/components/countdown.jsx',
+      Clock: 'app/components/Clock.jsx',
 
     },
     extensions: ['', '.js', '.jsx']
