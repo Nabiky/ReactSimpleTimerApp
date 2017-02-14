@@ -29,6 +29,7 @@ var webpack = require('webpack');
       Timer: 'app/components/Timer.jsx',
       Countdown: 'app/components/countdown.jsx',
       Clock: 'app/components/Clock.jsx',
+      CountdownForm: 'app/components/CountdownForm.jsx'
 
     },
     extensions: ['', '.js', '.jsx']
