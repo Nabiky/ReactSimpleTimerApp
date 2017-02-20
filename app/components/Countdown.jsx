@@ -20,10 +20,10 @@ componentDidUpdate: function (prevProps,prevState) {
       case 'started' :
          this.startTimer();
         break;
-      case 'stopped':
+      case 'stopped'://clear button
         this.setState({count: 0});
       case 'paused':
-          clearInterval(this.timer)
+          clearInterval(this.timer)// it's gonna leave the count wherever it was.
           this.timer = undefined;
           break;
     }
@@ -62,7 +62,7 @@ handleStatusChange: function(newStatus){
         return <CountdownForm onSetCountdown={this.handleSetCountdown}/>;
      }
    };
-   
+
     return(
       <div>
         <Clock totalSeconds={count}/>

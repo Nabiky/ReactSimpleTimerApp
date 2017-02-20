@@ -5,19 +5,17 @@ var Controls = React.createClass({
     countdownStatus: React.PropTypes.string.isRequired,
     onStatusChange: React.PropTypes.func.isRequired,
   },
-
-  // onStatusChange: function (newStatus){
-  // return function() => {
-  //   this.props.onStatusChange(newStatus);// this is what gets called when
-   //someone clock the button
-  // }
-  // },// currying
+  
+  //
+  // onStopped: function() {
+  //     this.props.onStatusChange('stopped');
+  //  },
 
   onStatusChange: function (newStatus){
    return () => {
   this.props.onStatusChange(newStatus);
    }
-},
+},// currying.
 render: function () {
    var {countdownStatus} = this.props;
    var renderStartStopButton = () => {
