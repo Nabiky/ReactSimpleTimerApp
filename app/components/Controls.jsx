@@ -5,7 +5,7 @@ var Controls = React.createClass({
     countdownStatus: React.PropTypes.string.isRequired,
     onStatusChange: React.PropTypes.func.isRequired,
   },
-  
+
   //
   // onStopped: function() {
   //     this.props.onStatusChange('stopped');
@@ -16,6 +16,12 @@ var Controls = React.createClass({
   this.props.onStatusChange(newStatus);
    }
 },// currying.
+
+//
+// componentWillReceiveProps: function (newProps) {
+//  console.log('componentWillReceiveProps', newProps.countdownStatus);
+// },
+
 render: function () {
    var {countdownStatus} = this.props;
    var renderStartStopButton = () => {

@@ -30,12 +30,28 @@ componentDidUpdate: function (prevProps,prevState) {
   }
 },
 
+
+componentWillUnmount: function () {
+  //we want to clear the interval here because, when someone leaves the countdown page this
+  //interval is gonna keep firing even if they go to the timer and do something else,
+  clearInterval(this.timer);
+  this.timer = undefined;
+},
+
 startTimer: function () {
  this.timer = setInterval( () => {
+
     var newCount = this.state.count - 1;
     this.setState({
       count: newCount >= 0 ? newCount  :  0 // inside a object u don't need a semicolon!
     });
+
+    if(newCount === 0 ) {
+      this.setState({
+        countdownStatus: 'stopped'// very important!
+      });
+    }
+
   }, 1000);
 
 },
@@ -53,8 +69,8 @@ handleStatusChange: function(newStatus){
 
  render:function() {
 
-   var{count,countdownStatus} = this.state;
 
+   var{count,countdownStatus} = this.state;
    var renderControlArea = () => {
      if(countdownStatus !== 'stopped'){ //if is not equal to stopped!!
         return <Controls countdownStatus ={countdownStatus} onStatusChange={this.handleStatusChange}/>;
@@ -65,6 +81,7 @@ handleStatusChange: function(newStatus){
 
     return(
       <div>
+        <h1 className="page-title"> Countdown App </h1>
         <Clock totalSeconds={count}/>
          {renderControlArea()}
       </div>
