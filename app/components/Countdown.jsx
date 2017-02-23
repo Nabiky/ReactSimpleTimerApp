@@ -67,10 +67,9 @@ handleStatusChange: function(newStatus){
  this.setState({countdownStatus: newStatus});
 },
 
+
  render:function() {
-
-
-   var{count,countdownStatus} = this.state;
+  var{count,countdownStatus} = this.state;
    var renderControlArea = () => {
      if(countdownStatus !== 'stopped'){ //if is not equal to stopped!!
         return <Controls countdownStatus ={countdownStatus} onStatusChange={this.handleStatusChange}/>;
