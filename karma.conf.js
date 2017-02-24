@@ -5,7 +5,11 @@ module.exports = function (config){
       browsers:['Chrome'],
       singleRun: true,
       frameworks:['mocha'],
-      files:['app/tests/**/*.test.jsx'],
+      files:[
+        'node_modules/jquery/dist/jquery.min.js',// the script loader is not avail in karma.
+        'node_modules/foundation-sites/dist/foundation.min.js',
+        'app/tests/**/*.test.jsx'
+      ],
       preprocessors:{
         'app/tests/**/*.test.jsx':['webpack','sourcemap']
       },
